@@ -12,9 +12,13 @@ var svg = d3.select("svg");
 
 d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json",function(err,data){
 
-   if(err)
-          throw err;
+   if(err) throw err;
   
 console.log(data);
+
+          var barWidth = Math.ceil(width / data.data.length);
+        
+        xScale.domain([minDate,maxDate]);
+        yScale.domain([ 0, d3.max(data.data, function(d) { return d[1]; })]);
 
 });
