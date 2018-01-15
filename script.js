@@ -18,7 +18,7 @@ console.log(data);
 
           var barWidth = Math.ceil(width / data.data.length);
         
-        xScale.domain([minDate,maxDate]);
-        yScale.domain([ 0, d3.max(data.data, function(d) { return d[1]; })]);
+        xScale.domain([210,0]);
+        yScale.domain([ data[data.length-1].place, data[0].place]);
 
 });
