@@ -14,12 +14,12 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
    if(err) throw err;
   
-console.log(data[0].Place);
-  
   xScale.domain([210,0]);
   yScale.domain([ 35,1]);
   
-  g.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale));
+  g.append("g").attr("transform", "translate(0," + height + ")").call(d3.axisBottom(xScale).tickFormat(function (d){ 
+    
+    if (d<60) return d ; else return parseInt(d/60)+":"+d%60;}));
   g.append("g").call(d3.axisLeft(yScale).tickFormat(function(d){
              return d;
          }).ticks(5));
