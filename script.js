@@ -14,11 +14,11 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
    if(err) throw err;
   
-console.log(data);
+  console.log(data);
 
-          var barWidth = Math.ceil(width / data.data.length);
-        
-        xScale.domain([210,0]);
-        yScale.domain([ data[data.length-1].place, data[0].place]);
+  
+  xScale.domain([210,0]);
+  yScale.domain([ data[data.length-1].Place, data[0].Place]);
 
+  var xValue = function(d){return (data[0].Seconds -d.Seconds)}
 });
