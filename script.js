@@ -15,7 +15,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
    if(err) throw err;
   
   xScale.domain([210,0]);
-  yScale.domain([ 35,1]);
+  yScale.domain([ 36,1]);
   
   g.append("g")
     .attr("transform", "translate(0," + height + ")")
@@ -29,8 +29,9 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .enter()
    .append("text")
    .text(function(d){return d.Name})
-   .attr("y",function(d){return yScale(d.Place)+5;})
-   .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210)+15;});
+     .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210)+15;})
+   .attr("y",function(d){return yScale(d.Place)+5;});
+
    
   
   g.selectAll("circle")
