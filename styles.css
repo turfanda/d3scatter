@@ -5,9 +5,20 @@ svg{
 overflow:visible !important;}
 .def{
   position:absolute;
-  background-color:blue;
+  background-color:black;
   top:100px;
   left:100px;
   opacity:0;
   width:200px;
+  border-radius:10px;
+    padding:10px;
+}
+
+.insideInfo{
+padding:10px;
+  color:white;
+}
+.mausein{
+padding:10px;
+  color:white;
 }
