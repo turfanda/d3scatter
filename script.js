@@ -24,6 +24,15 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   g.append("g")
     .call(d3.axisLeft(yScale).tickFormat(function(d){return d;}).ticks(5));
   
+   g.selectAll("text")
+    .data(data)
+    .enter()
+   .append("text")
+   .text(function(d){return d.Name})
+   .attr("y",function(d){return yScale(d.Place)+5;})
+   .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210)+15;});
+   
+  
   g.selectAll("circle")
     .data(data)
     .enter()
@@ -32,16 +41,8 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("r",5)
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
     .attr("cy",function(d){return yScale(d.Place);});
-  
-  var i=0;
-  console.log(data);
- g.selectAll("text")
-    .data(data)
-    .enter()
-   .append("text")
-   .attr("y",function(d){i++; console.log(i);return yScale(d.Place);})
-   .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210);})
-   .text(function(d){return d.Name});
+
+
 
   
 
