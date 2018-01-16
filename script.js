@@ -32,7 +32,9 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("r",5)
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
     .attr("cy",function(d){return yScale(d.Place);});
-     g.selectAll(".text").append("text")    .data(data)
+  
+  g.selectAll(".text").append("text")
+    .data(data)
     .enter()
     .attr("y",function(d){return yScale(d.Place);})
     .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210) + 5;})
