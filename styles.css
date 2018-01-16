@@ -12,6 +12,14 @@ h1 {
 fill:red;
   font-size:25px;
 }
+.title1{
+fill:red;
+  font-size:20px;
+}
+.title2{
+fill:red;
+  font-size:15px;
+}
 svg{
 overflow:visible !important;}
 .def{

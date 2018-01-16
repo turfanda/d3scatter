@@ -48,7 +48,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   
           svg.append("text")
        .attr("transform", "translate(100,0)")
-       .attr("x", 170)
+       .attr("x", 150)
        .attr("y", 50)
         .attr("class", "title")
        .text("Doping in Professional Bicycle Racing");
@@ -56,17 +56,17 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   
           svg.append("text")
        .attr("transform", "translate(100,0)")
-       .attr("x", 170)
-       .attr("y", 70)
-        .attr("class", "title")
+       .attr("x", 200)
+       .attr("y", 80)
+        .attr("class", "title1")
        .text("35 Fastest times up Alpe dHuez");
   
           svg.append("text")
        .attr("transform", "translate(100,0)")
-       .attr("x", 170)
-       .attr("y", 90)
-        .attr("class", "title")
-       .text("Normalized to 13.8km distance"");
+       .attr("x", 240)
+       .attr("y", 100)
+        .attr("class", "title2")
+       .text("Normalized to 13.8km distance");
 
     g.selectAll("circle")
         .data(data)
