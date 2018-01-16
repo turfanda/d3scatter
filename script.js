@@ -33,6 +33,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
    .attr("y",function(d){return yScale(d.Place)+5;});
 
    
+   var div = d3.select(".def");
   
   g.selectAll("circle")
     .data(data)
@@ -43,22 +44,13 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
     .attr("cy",function(d){return yScale(d.Place);})
     .on("mouseover", function(d) {
-        var rect = d3.select(this);
-        rect.attr("class", "mousein");
-        var currentDateTime = new Date(d[0]);
-        var year = currentDateTime.getFullYear();
-        var month = currentDateTime.getMonth();
-        var dollars = d[1];
         div.transition()
           .duration(50)
           .style("opacity", 0.9);
-        div.html("<span class='insideInfo'>" + moneyFormat(dollars) + "&nbsp;Billion </span><br><span class='insideInfo'>" + year+ "-"+currentDateTime.toString().slice(3, 7)+"</span>")
-          .style("left", (d3.event.pageX + 5) + "px")
-          .style("top", (d3.event.pageY - 50) + "px");
+        div.html("<span class='insideInfo'>" + d.Name +":"+d.Nationality+"</span><br><span class='insideInfo'>Year :" + d.Year+ ", Time:"+d.Time+"</span><br><span class='insideInfo'>"+d.Doping+"</span>")
+
       })
         .on("mouseout", function() {
-        var rect = d3.select(this);
-        rect.attr("class", "mouseout");
         div.transition()
           .duration(100)
           .style("opacity", 0);
