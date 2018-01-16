@@ -24,7 +24,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   g.append("g")
     .call(d3.axisLeft(yScale).tickFormat(function(d){return d;}).ticks(5));
   
-   g.selectAll("text")
+   g.selectAll(".text")
     .data(data)
     .enter()
    .append("text")
