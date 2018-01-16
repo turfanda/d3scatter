@@ -1,3 +1,9 @@
+body {
+  background-color: #ddd;
+  background-repeat: repeat;
+  background-image: url("https://image.freepik.com/free-vector/golden-ornamental-pattern-background_1268-828.jpg")
+;text-align:center;
+}
 h1 {
   color: fuchsia;
 }
@@ -18,7 +24,7 @@ overflow:visible !important;}
 padding:10px;
   color:white;
 }
-.mausein{
-padding:10px;
-  color:white;
+.chartZone{
+  text-align:center;
 }
+

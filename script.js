@@ -65,8 +65,6 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
         })
         .on("mouseover", function(d) {
-      var circ=d3.select(this);
-      circ.classed("mousein",true);
             div.transition()
                 .duration(100)
                 .style("opacity", 0.5);
@@ -74,8 +72,6 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
         })
         .on("mouseout", function() {
-          var circ=d3.select(this);
-      circ.classed("mousein",false);
             div.transition()
                 .duration(100)
                 .style("opacity", 0);
