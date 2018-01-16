@@ -8,7 +8,7 @@ var svg = d3.select("svg");
       var xScale = d3.scaleLinear().range ([0, width]);
       var yScale = d3.scaleLinear().range ([height, 0]);
 
-      var g = svg.append("g").attr("transform", "translate(" + 50+"," + 50+ ")");
+      var g = svg.append("g").attr("transform", "translate(" + 30+"," + 50+ ")");
 
 d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json",function(err,data){
 
@@ -41,7 +41,28 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("class","dot")
     .attr("r",5)
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
-    .attr("cy",function(d){return yScale(d.Place);});
+    .attr("cy",function(d){return yScale(d.Place);})
+    .on("mouseover", function(d) {
+        var rect = d3.select(this);
+        rect.attr("class", "mousein");
+        var currentDateTime = new Date(d[0]);
+        var year = currentDateTime.getFullYear();
+        var month = currentDateTime.getMonth();
+        var dollars = d[1];
+        div.transition()
+          .duration(50)
+          .style("opacity", 0.9);
+        div.html("<span class='insideInfo'>" + moneyFormat(dollars) + "&nbsp;Billion </span><br><span class='insideInfo'>" + year+ "-"+currentDateTime.toString().slice(3, 7)+"</span>")
+          .style("left", (d3.event.pageX + 5) + "px")
+          .style("top", (d3.event.pageY - 50) + "px");
+      })
+        .on("mouseout", function() {
+        var rect = d3.select(this);
+        rect.attr("class", "mouseout");
+        div.transition()
+          .duration(100)
+          .style("opacity", 0);
+      });
 
 
 
