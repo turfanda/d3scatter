@@ -1,19 +1,24 @@
 body {
   background-color: #ddd;
   background-repeat: repeat;
-  background-image: url("https://image.freepik.com/free-vector/golden-ornamental-pattern-background_1268-828.jpg")
+  background-image: url("https://image.freepik.com/free-vector/wrinkled-paper-texture_1100-12.jpg")
 ;text-align:center;
 }
 h1 {
   color: fuchsia;
+}
+
+.title{
+fill:red;
+  font-size:25px;
 }
 svg{
 overflow:visible !important;}
 .def{
   position:absolute;
   background-color:black;
-  top:100px;
-  left:100px;
+  top:200px;
+  left:300px;
   opacity:0;
   width:200px;
   border-radius:10px;

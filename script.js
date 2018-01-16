@@ -45,6 +45,28 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
 
 
     var div = d3.select(".def");
+  
+          svg.append("text")
+       .attr("transform", "translate(100,0)")
+       .attr("x", 170)
+       .attr("y", 50)
+        .attr("class", "title")
+       .text("Doping in Professional Bicycle Racing");
+
+  
+          svg.append("text")
+       .attr("transform", "translate(100,0)")
+       .attr("x", 170)
+       .attr("y", 70)
+        .attr("class", "title")
+       .text("35 Fastest times up Alpe dHuez");
+  
+          svg.append("text")
+       .attr("transform", "translate(100,0)")
+       .attr("x", 170)
+       .attr("y", 90)
+        .attr("class", "title")
+       .text("Normalized to 13.8km distance"");
 
     g.selectAll("circle")
         .data(data)
