@@ -33,15 +33,15 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
     .attr("cy",function(d){return yScale(d.Place);});
   
- /* g.selectAll(".dot")
-    .append("text")
+ g.selectAll("text")
     .data(data)
     .enter()
-    .attr("y",function(d){console.log(d.Place);return yScale(d.Place);})
+      .append("text")
+.attr("y",function(d){console.log(d.Place);return yScale(d.Place);})
     .attr("x",function(d){console.log(xScale(parseInt(d.Seconds)-2210)+5);return xScale(parseInt(d.Seconds)-2210);})
-    .text("asd")
-  .attr("transform", "translate(15,+4)");*/
+    .text(function(d){return d.Name});
 
   
 
 });
+   /* */
