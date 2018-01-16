@@ -28,8 +28,14 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .data(data)
     .enter()
     .append("circle")
-    .attr("class","dot").attr("r",5)
-    .attr("cx",function(d){return xScale(2210-parseInt(d.Seconds);)}).attr("cy",function(d){return d.Place;})
+    .attr("class","dot")
+    .attr("r",5)
+    .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
+    .attr("cy",function(d){return yScale(d.Place);})
+    .append("text")
+    .attr("y",function(d){return yScale(d.Place);})
+    .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210);}+5)
+    .text("asd");
   
 
 });
