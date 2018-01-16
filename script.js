@@ -24,7 +24,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
   g.append("g")
     .call(d3.axisLeft(yScale).tickFormat(function(d){return d;}).ticks(5));
   
-  g.selectAll(".dot")
+  g.selectAll("circle")
     .data(data)
     .enter()
     .append("circle")
@@ -33,12 +33,14 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     .attr("cx",function(d){return xScale(parseInt(d.Seconds)-2210);})
     .attr("cy",function(d){return yScale(d.Place);});
   
-  g.selectAll(".text").append("text")
+ /* g.selectAll(".dot")
+    .append("text")
     .data(data)
     .enter()
-    .attr("y",function(d){return yScale(d.Place);})
-    .attr("x",function(d){return xScale(parseInt(d.Seconds)-2210) + 5;})
-    .text("asd");
+    .attr("y",function(d){console.log(d.Place);return yScale(d.Place);})
+    .attr("x",function(d){console.log(xScale(parseInt(d.Seconds)-2210)+5);return xScale(parseInt(d.Seconds)-2210);})
+    .text("asd")
+  .attr("transform", "translate(15,+4)");*/
 
   
 
