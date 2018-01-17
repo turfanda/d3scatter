@@ -54,7 +54,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     return yScale(20);
   })
   .attr("r", 5)
-  .attr("fill", "#333");
+  .attr("fill", "blue");
    
 svg.append("text")
   .attr("x", function(d) {
@@ -76,7 +76,7 @@ svg.append("circle")
     return yScale(23);
   })
   .attr("r", 5)
-  .attr("fill", "#f44");
+  .attr("fill", "red");
  
 svg.append("text")
   .attr("x", function(d) {
@@ -150,7 +150,6 @@ svg.append("text")
             div.transition()
                 .duration(100)
                 .style("opacity", 0.5);
-      div.style("top",)
             div.html("<span class='insideInfo'>" + d.Name + ":" + d.Nationality + "</span><br><span class='insideInfo'>Year :" + d.Year + ", Time:" + d.Time + "</span><br><span class='insideInfo'>" + d.Doping + "</span>")
 
         })
