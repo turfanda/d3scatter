@@ -17,7 +17,7 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
     xScale.domain([210, 0]);
     yScale.domain([36, 1]);
 
-  
+
 
     g.append("g")
         .attr("transform", "translate(0," + height + ")")
@@ -25,69 +25,69 @@ d3.json("https://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mas
             if (d < 60) return d;
             else return parseInt(d / 60) + ":" + d % 60;
         })).append("text")
-  .attr("x", 400)
-  .attr("y", 35)
-  .attr("dy", ".35em")
-    .style("fill","red")
-  .style("font-size","15px")
-  .style("text-anchor", "middle")
-  .text("Minutes Behind Fastest Time");
+        .attr("x", 400)
+        .attr("y", 35)
+        .attr("dy", ".35em")
+        .style("fill", "red")
+        .style("font-size", "15px")
+        .style("text-anchor", "middle")
+        .text("Minutes Behind Fastest Time");
 
     g.append("g")
         .call(d3.axisLeft(yScale).tickFormat(function(d) {
             return d;
         }).ticks(5)).append("text")
-  .attr("x", 0)
-  .attr("y", -25)
-  .attr("dy", ".5em")
-  .style("text-anchor", "end")
-  .style("fill","red")
-  .style("font-size","15px")
-  .attr("transform", "rotate(-90)")
-  .text("Ranking");
-  
-  svg.append("circle")
-  .attr("cx", function(d) {
-    return xScale(10);
-  })
-  .attr("cy", function(d) {
-    return yScale(20);
-  })
-  .attr("r", 5)
-  .attr("fill", "blue");
-   
-svg.append("text")
-  .attr("x", function(d) {
-    return xScale(7);
-  })
-  .attr("y", function(d) {
-    return yScale(20)+4;
-  })
-  .attr("text-anchor", "left")
-  .attr("class", "legend")
-  .text("No doping allegations");
+        .attr("x", 0)
+        .attr("y", -25)
+        .attr("dy", ".5em")
+        .style("text-anchor", "end")
+        .style("fill", "red")
+        .style("font-size", "15px")
+        .attr("transform", "rotate(-90)")
+        .text("Ranking");
 
-//red circle 
-svg.append("circle")
-  .attr("cx", function(d) {
-    return xScale(10);
-  })
-  .attr("cy", function(d) {
-    return yScale(23);
-  })
-  .attr("r", 5)
-  .attr("fill", "red");
- 
-svg.append("text")
-  .attr("x", function(d) {
-    return xScale(7);
-  })
-  .attr("y", function(d) {
-    return yScale(23)+4;
-  })
-  .attr("text-anchor", "left")
-  .attr("class", "legend")
-  .text("Riders with doping allegations");
+    svg.append("circle")
+        .attr("cx", function(d) {
+            return xScale(10);
+        })
+        .attr("cy", function(d) {
+            return yScale(20);
+        })
+        .attr("r", 5)
+        .attr("fill", "blue");
+
+    svg.append("text")
+        .attr("x", function(d) {
+            return xScale(7);
+        })
+        .attr("y", function(d) {
+            return yScale(20) + 4;
+        })
+        .attr("text-anchor", "left")
+        .attr("class", "legend")
+        .text("No doping allegations");
+
+    //red circle 
+    svg.append("circle")
+        .attr("cx", function(d) {
+            return xScale(10);
+        })
+        .attr("cy", function(d) {
+            return yScale(23);
+        })
+        .attr("r", 5)
+        .attr("fill", "red");
+
+    svg.append("text")
+        .attr("x", function(d) {
+            return xScale(7);
+        })
+        .attr("y", function(d) {
+            return yScale(23) + 4;
+        })
+        .attr("text-anchor", "left")
+        .attr("class", "legend")
+        .text("Riders with doping allegations");
 
     g.selectAll(".text")
         .data(data)
@@ -105,28 +105,28 @@ svg.append("text")
 
 
     var div = d3.select(".def");
-  
-          svg.append("text")
-       .attr("transform", "translate(100,0)")
-       .attr("x", 150)
-       .attr("y", 50)
-        .attr("class", "title")
-       .text("Doping in Professional Bicycle Racing");
 
-  
-          svg.append("text")
-       .attr("transform", "translate(100,0)")
-       .attr("x", 200)
-       .attr("y", 80)
+    svg.append("text")
+        .attr("transform", "translate(100,0)")
+        .attr("x", 150)
+        .attr("y", 50)
+        .attr("class", "title")
+        .text("Doping in Professional Bicycle Racing");
+
+
+    svg.append("text")
+        .attr("transform", "translate(100,0)")
+        .attr("x", 200)
+        .attr("y", 80)
         .attr("class", "title1")
-       .text("35 Fastest times up Alpe dHuez");
-  
-          svg.append("text")
-       .attr("transform", "translate(100,0)")
-       .attr("x", 240)
-       .attr("y", 100)
+        .text("35 Fastest times up Alpe dHuez");
+
+    svg.append("text")
+        .attr("transform", "translate(100,0)")
+        .attr("x", 240)
+        .attr("y", 100)
         .attr("class", "title2")
-       .text("Normalized to 13.8km distance");
+        .text("Normalized to 13.8km distance");
 
     g.selectAll("circle")
         .data(data)

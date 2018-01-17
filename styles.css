@@ -26,8 +26,8 @@ overflow:visible !important;}
   position:absolute;
   background-color:black;
   opacity:0;
-  top:200px;
-  left:300px;
+  top:150px;
+  left:200px;
   width:200px;
   border-radius:10px;
     padding:10px;
@@ -40,6 +40,7 @@ padding:10px;
 .chartZone{
   text-align:center;
   position:relative;
-  wid
+  width:1200px;
+  margin:auto;
 }
 
